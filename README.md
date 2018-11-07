@@ -33,6 +33,7 @@ npm install level --save
 To test code:
 1. Open a command prompt or shell terminal after install node.js.
 2. Enter a node session, also known as REPL (Read-Evaluate-Print-Loop).
+3. If you are running for the second time, go to the folder you are running this example and delete the folder - chaindata
 ```
 node
 ```
