@@ -60,17 +60,17 @@ blockchain.validateChain();
 (function induceErrors() {
   let inducedHashErrorBlocks = [2,4,7];
   for (let i = 0; i < inducedHashErrorBlocks.length; i++) {
-    blockchain.getBlock(inducedHashErrorBlocks[i]).then(block => {
+    myBlockChain.getBlock(inducedHashErrorBlocks[i]).then(block => {
       block.data = 'induced chain error';
-      addLevelDBData(block.height, JSON.stringify(block));
+      myBlockChain.addBlockToLevelDB(block.height, JSON.stringify(block));
     });
   }
 
   let inducedLinkErrorBlocks = [5, 9];
   for (let i = 0; i < inducedLinkErrorBlocks.length; i++) {
-    blockchain.getBlock(inducedLinkErrorBlocks[i]).then(block => {
+    myBlockChain.getBlock(inducedLinkErrorBlocks[i]).then(block => {
       block.previousBlockHash = 'incorrecthash';
-      addLevelDBData(block.height, JSON.stringify(block));
+      myBlockChain.addBlockToLevelDB(block.height, JSON.stringify(block));
     });
   }
 })();
