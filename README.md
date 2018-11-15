@@ -15,17 +15,9 @@ Installing Node and NPM is pretty straightforward using the installer package av
 
 ### Configuring your project
 
-- Use NPM to initialize your project and create package.json to store project dependencies.
+- Use NPM install to download the dependencies we need for this project
 ```
-npm init
-```
-- Install crypto-js with --save flag to save dependency to our package.json file
-```
-npm install crypto-js --save
-```
-- Install level with --save flag
-```
-npm install level --save
+npm install
 ```
 
 ## Testing
@@ -33,16 +25,16 @@ npm install level --save
 To test code:
 1. Open a command prompt or shell terminal after install node.js.
 2. Enter a node session, also known as REPL (Read-Evaluate-Print-Loop).
-3. If you are running for the second time, go to the folder you are running this example and delete the folder - chaindata
+3. If you are running for the second time, go to the folder that you are running this example and delete the folder - chaindata
 ```
 node
 ```
-3. Copy and paste your code into your node session
-4. Instantiate blockchain with blockchain variable
+4. Copy and paste your code into your node session
+5. Instantiate blockchain with blockchain variable
 ```
 let blockchain = new Blockchain();
 ```
-5. Generate 10 blocks using a for loop
+6. Generate 10 blocks using a for loop
 ```
 (function theLoop (i) 
   {setTimeout(function () {
@@ -51,11 +43,11 @@ let blockchain = new Blockchain();
   }, 100);
 })(10);
 ```
-6. Validate blockchain
+7. Validate blockchain
 ```
 blockchain.validateChain();
 ```
-7. Induce errors by changing block data
+8. Induce errors by changing block data
 ```
 (function induceErrors() {
   let inducedHashErrorBlocks = [2,4,7];
@@ -75,8 +67,8 @@ blockchain.validateChain();
   }
 })();
 ```
-8. Validate blockchain. The chain should now fail with blocks 2, 4, 5, 7 and 9.
+9. Validate blockchain. The chain should now fail with blocks 2, 4, 5, 7 and 9.
 ```
-blockchain.validateChain();
+myBlockChain.validateChain();
 ```
 
